@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root{
+    --primary : #ffffff38;
+    --secondary : #ffffff;
+    --hour: #F81460;
+    --minute: var(--secondary);
+    --second: #1A74BE;
+    
+
+    --shadow1: rgba(0, 0, 0, 0.123)
+    --shadow2: rgba(163, 177, 198, 0.6)
+    --shadow3: rgba(255, 255, 255, 0.5)
+    --shadow4: rgba(163, 177, 198, 0.3)
+    --shadow5: rgba(167, 167, 167, 0.041)
+    --shadow6: rgba(163, 177, 198, 0.3)
+    --shadow7: rgba(255, 255, 255, 0.2)
+
+
+}
+
+*{
+    transition-duration: 1s;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    display: flex;
+    background-image: url(day.avif);
+    background-size: cover;
+    background-position: center;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+
+    height: 100vh;
+    margin: 0;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+@media all and (max-width: 620px) {
+    body{
+        display: flex;
+        background-image: url(Blob_Backgroundnew_image_1.webp);    
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+    
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        flex-direction: column;
+        overflow: hidden;
+    }
+}
+
+@media all and (max-height: 620px) {
+    body{
+        display: flex;
+        background-image: url(Blob_Backgroundnew_image_1.webp);    
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+    
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        flex-direction: column;
+        overflow: hidden;
+    }
+}
+
+.base{
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: var(--primary)    ;
+    width: 312px;
+    height: 312px;
+    border-radius: 100%;
+    animation: clock .2s 0s linear;
+    transform: scale(0%);
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */  
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes clock {
+    0%{
+        transform: scale(0%);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+
+.clock{
+    display: flex;
+    
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+
+    background-color: var(--primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85%;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.clock-image{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(white.png);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.hand-base{
+    display: flex;
+    position: absolute;
+
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+
+    background-color: var(--secondary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85%;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    z-index: 1000;
+}
+
+.hand-base2{
+    display: flex;
+    position: absolute;
+
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+
+    background-color: var(--primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85%;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+
+    z-index: 10010;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.hour-hand{
+    position: absolute;
+    width: 4px;
+    height: 46px;
+    background-color: var(--hour);
+    border-radius: 46px;
+    transform: translateY(-23px);
+    rotate: 0deg;
+}
+
+
+
+.minute-hand{
+    position: absolute;
+    width: 4px;
+    height: 64px;
+    background-color: var(--minute);
+    border-radius: 46px;
+    transform: translateY(-32px);
+    rotate: 0deg;
+}
+
+.second-hand{
+    position: absolute;
+    width: 4px;
+    height: 92px;
+    background-color: var(--second);
+    border-radius: 46px;
+    transform: translateY(-31px);
+    rotate: 0deg;
+}
+
+
+
+.container{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    opacity: 0;
+    width: 128px;
+    height: 64px;
+    border-radius: 32px;
+    background-color: var(--primary);
+    transition-duration: 1s;
+    animation: darktheme .2s .2s linear;
+    transform: translateX(-250%);
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */  
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes darktheme {
+    0%{
+        opacity: 0;
+        transform: translateX(-250%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.container:hover{
+    
+    transition-duration: 1s;
+}
+
+.ball{
+    width: 48px;
+    height: 48px;
+    border-radius: 32px;
+    background-color: white;
+    transition-duration: 1s;
+    pointer-events: none;
+    background-image: url(Sun.png);
+    background-size: cover;
+    
+}
+
+.container input{
+    width: 128px;
+    height: 128px;
+    opacity: 0;
+    position: absolute;
+}
+
+.credits{
+    opacity: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 12px;
+    padding-right: 12px;
+    flex-direction: row;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 128px;
+    height: 64px;
+    border-radius: 32px;
+    background-color: var(--primary);
+    animation: credits .2s .2s linear;
+    transform: translateX(250%);
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */  
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes credits {
+    0%{
+        opacity: 0;
+        transform: translateX(250%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.credits a{
+    width: 48px;
+    height: 48px;
+}
+
+.credits svg{
+    width: 48px;
+    height: 48px;
+    
+}
+
+.credits svg path{
+    fill: var(--secondary);
+    
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: footer .2s .4s 1 linear;
+    transform: translateY(100%);
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+    opacity: 0;
+    backdrop-filter: blur(12px);
+    background-color: transparent;
+    height: 32px;
+}
+
+footer::before{
+    transform: translateY(100%);
+}
+
+footer::after{
+    transform: translateY(0%);
+}
+@keyframes footer{
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.foot{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    height: 32px;
+    align-items: center;
+}
+
+span{
+    color: var(--secondary);
+}
+
+a{
+    color: var(--second);
+    font-weight: 600;
+    text-decoration: none;
+}
